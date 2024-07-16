@@ -1,0 +1,41 @@
+# Set this to development, staging or production
+SetEnv _ENV development
+
+SetEnv HTACCESS on
+
+RewriteEngine on
+Options -Indexes
+
+#DirectoryIndex index.php
+#RewriteCond %{HTTP_HOST} !^trang.hdweb24h.com$ [NC]
+#RewriteRule ^ http://trang.hdweb24h.com%{REQUEST_URI} [R=301,L]
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . index.php [L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # To rewrite "www.domain.com -> domain.com" uncomment the following lines.
+    RewriteCond %{HTTPS} !=off
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1/ [R=301,L]
+
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set Content-Security-Policy "upgrade-insecure-requests;"
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# END ng
