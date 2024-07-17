@@ -60,11 +60,13 @@ function onSearch(obj) {
   //     location.href = "tim-kiem?keyword="+encodeURI(keyword);
   //     loadPage(document.location);
   // }
+  localStorage.setItem("userGptIn", "true");
   location.href = "tim-kiem?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);
 }
 
 function onSearch_keyword(keyword) {
+  localStorage.setItem("userGptIn", "true");
   var keyword = keyword;
   location.href = "tim-kiem?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);
@@ -75,6 +77,7 @@ function doEnter_vbks(event, obj) {
 }
 
 function onSearch_keyword_vbks(obj) {
+  localStorage.setItem("userGptIn", "true");
   var keyword = $("#" + obj).val();
   location.href = "tim-kiem-vb-ks?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);
@@ -85,6 +88,7 @@ function doEnter_vbdang(event, obj) {
 }
 
 function onSearch_keyword_vbdang(obj) {
+  localStorage.setItem("userGptIn", "true");
   var keyword = $("#" + obj).val();
   location.href = "tim-kiem-vb-dang?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);
@@ -95,6 +99,7 @@ function doEnter_phkg(event, obj) {
 }
 
 function onSearch_keyword_phkg(obj) {
+  localStorage.setItem("userGptIn", "true");
   var keyword = $("#" + obj).val();
   location.href = "tim-kiem-phkg?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);
@@ -105,6 +110,7 @@ function doEnter_noibo(event, obj) {
 }
 
 function onSearch_keyword_noibo(obj) {
+  localStorage.setItem("userGptIn", "true");
   var keyword = $("#" + obj).val();
   location.href = "tim-kiem-vb-nb?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);
@@ -115,6 +121,7 @@ function doEnter_thpl(event, obj) {
 }
 
 function onSearch_keyword_thpl(obj) {
+  localStorage.setItem("userGptIn", "true");
   var keyword = $("#" + obj).val();
   location.href = "tim-kiem-thpl?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);
@@ -126,6 +133,7 @@ function doEnter_hethongbieumau(event, obj) {
 }
 
 function onSearch_keyword_hethongbieumau(obj) {
+  localStorage.setItem("userGptIn", "true");
   var keyword = $("#" + obj).val();
   location.href = "tim-kiem-ht-bm?keyword=" + encodeURI(keyword).replace(/%20/g, '+');
   loadPage(document.location);

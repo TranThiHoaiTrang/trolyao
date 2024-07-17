@@ -1,3 +1,22 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Kiểm tra cờ đã đăng nhập trong localStorage
+        if (localStorage.getItem('userGptIn') === 'true') {
+            var audio = document.getElementById('myAudiogpt');
+            // Phát âm thanh khi đã đăng nhập
+            audio.play().catch(function(error) {
+                console.log('Autoplay was prevented:', error);
+            });
+            // Xóa cờ đã đăng nhập sau khi phát âm thanh
+            localStorage.removeItem('userGptIn');
+        }
+    });
+</script>
+
+<audio id="myAudiogpt">
+    <source src="./assets/images/tktk.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 <?php
 $list_vb_ks = $d->rawQuery("select * FROM table_product_list WHERE type = 'tinh-huong-phap-ly' and hienthi > 0 order by stt,id desc");
 ?>
